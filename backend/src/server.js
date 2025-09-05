@@ -1,15 +1,17 @@
-import express from 'express';
-import notesRoute from './routes/notes.route.js';
-import { connectDB } from './config/db.js';
+import express, { json } from 'express';
 import dotenv from 'dotenv';
+import cors from "cors";
+import { connectDB } from './config/db.js';
 import rateLimiter from './middleware/rateLimiter.middleware.js';
+import notesRoute from './routes/notes.route.js';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// Middleware
+// Middlewares
+app.use(cors()); // Cors allow requests from every frontend URL 
 app.use(express.json()); // Middleware to parse JSON bodies: req.body
 app.use(rateLimiter);
 

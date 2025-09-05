@@ -4,9 +4,12 @@ Backend :
 - mongoose 8.14.3
 - dotenv
 - @upstash/ratelimit@2.0.5 @upstash/redis@1.34.9
+- cors@2.8.5
 
 Frontend :
 - react-router
 - react-hot-toast
 - tailwind@3 
 - daisyui@4.12.24 (with -D + import and add to tailwind.config plugins) 
+- lucide-react (icons package)
+- axios
